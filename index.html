@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>NEXUS — Local AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">LOCAL-FIRST AI WORKSPACE</p>
+        <h1>NEXUS<span>.</span></h1>
+      </div>
+      <div id="connection" class="status" role="status">Not connected</div>
+    </header>
+
+    <section class="intro">
+      <h2>Your model. Your device. Your control.</h2>
+      <p>This starter interface connects to a llama.cpp server running on this device.</p>
+    </section>
+
+    <section class="settings panel" aria-label="Connection settings">
+      <label for="server-url">Local server address</label>
+      <div class="connection-row">
+        <input id="server-url" type="url" value="http://127.0.0.1:8080" spellcheck="false">
+        <button id="connect-button" type="button">Connect</button>
+      </div>
+      <p class="hint">The server must be running in Termux. This page does not start it.</p>
+    </section>
+
+    <section class="chat panel" aria-label="Chat">
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message nexus">
+          <span class="speaker">NEXUS</span>
+          <p>Connection ready to be tested. Connect to your local model to begin.</p>
+        </div>
+      </div>
+      <form id="chat-form" class="composer">
+        <textarea id="prompt" rows="2" placeholder="Message NEXUS..." required></textarea>
+        <button id="send-button" type="submit">Send</button>
+      </form>
+      <p class="hint">Early prototype: messages are kept only in this page session.</p>
+    </section>
+
+    <footer>
+      <span>NEXUS · Prototype 0.1</span>
+      <span>Local inference only</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
